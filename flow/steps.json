@@ -1,0 +1,40 @@
+{
+    "STEP_1": [
+        "hola",
+        "ola",
+        "ole",
+        "inicio",
+        "welcome",
+        "buenos días",
+        "buenas tardes",
+        "buenas noches",
+        "me dieron este número",
+        "venden a crédito",
+        "quisiera saber si venden",
+        "necesito saber"
+    ],
+    "STEP_2": [
+        "catalogo",
+        "productos",
+        "categoría"
+    ],
+    "STEP_3": [
+        "asesor",
+        "asesores",
+        "Vendedor",
+        "cobrador"
+    ],
+    "STEP_4": [
+        "muchas gracias",
+        "ok",
+        "gracias",
+        "vale gracias"
+    ],
+    "STEP_5": [
+        "hacer pedido"
+    ],
+    "STEP_5_5": [
+        "si",
+        "correcto"
+    ]
+}

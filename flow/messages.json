@@ -1,0 +1,73 @@
+{
+    "STEP_1": [
+        "🅷🅾🅻🅰 ¡Bienvenid@ a mi chat de WhatsApp! 📱💻💰 \n",
+        " *Te saluda CrediBot* � el asistente virtual 💻 de Créditos Torres J.L🖐️😃",
+        " 👇 ",
+        " ‼️ En qué puedo servirte? ‼️",
+        " � Si necesitas saber sobre algún productos 🛋️🛒escribe la palabra ‼️ Catalogo y te mostrare nuestras categorías😉",
+        "❓O si necesitas algún asesor escribe la palabra Asesor 👨🏻�"
+    ],
+    "STEP_2": [
+        "Perfecto estas son nuestras categorías. 🙂🤖�"
+    ],
+    "STEP_2_1": [
+        "Lo siento no tenemos esa categoria"
+    ],
+    "STEP_2_2": [
+        "Recuerda que puedes escribir Asesor"
+    ],
+    "STEP_2_3": [
+        "Si estas interesado en este producto escribe *hacer pedido* y si quieres",
+        "ver otro articulo escribe la palabra *productos*"
+    ],
+    "STEP_2_4": [
+        "Buscando el mejor precio ...."
+    ],
+    "STEP_3": [
+        "De que municipio eres?"
+    ],
+    "STEP_3_1": [
+        "Lo siento no tenemos asesor intenta con otro municipio"
+    ],
+    "STEP_4": [
+        "Fue un placer hablar contigo ",
+        "Si necesitas algo más no dudes en contactarme"
+    ],
+    "STEP_5": [
+        "Cual es tu nombre?"
+    ],
+    "STEP_5_1": [
+        "Que producto necesitas?"
+    ],
+    "STEP_5_2": [
+        "Tu forma de pago cual es: crédito? credicontado? contado?"
+    ],
+    "STEP_5_3": [
+        "¿De que municipio eres?"
+    ],
+    "STEP_5_4": [
+        "Tus datos son \n",
+        "Nombre: *%NAME%* \n",
+        "Municipio: *%LOCATION%* \n",
+        "estas interesado en un *%PRODUCT%* \n",
+        "y lo quieres comprar a *%METHOD%* \n",
+        "Esta informacion es correct? "
+    ],
+    "STEP_5_5": [
+        "Esta informacion es correcta? De ser correcta responde *SI* de lo contrario *Hacer pedido*"
+    ],
+    "STEP_5_6": [
+        "Ok perfecto muy pronto un asesor lo estará contactando"
+    ],
+    "STEP_5_7": [
+        "Nuevo cliente sus datos son \n",
+        "Nombre: %NAME% \n",
+        "Municipio: %LOCATION% \n",
+        "estas interesado en un %PRODUCT% \n",
+        "y lo quieres comprar a %METHOD% \n \n",
+        "Su numero de contacto es %USERPHONE%"
+    ],
+    "ERROR": [
+        "Ups lo siento no puedo comprenderte"
+    ]
+}
