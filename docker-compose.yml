@@ -1,0 +1,12 @@
+version: '3'
+services:
+  chatbot_vendedor:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./bot_sessions:/app/bot_sessions
+    working_dir: /app
+    restart: always

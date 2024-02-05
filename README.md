@@ -1,40 +1,11 @@
+### CHATBOT Whatsapp (Baileys Provider)
+Prueba para S3
 
-__Instalacion__
-Debes instalar los paquetes necesarios
+**Con esta librería, puedes construir flujos automatizados de conversación de manera agnóstica al proveedor de WhatsApp,** configurar respuestas automatizadas para preguntas frecuentes, recibir y responder mensajes de manera automatizada, y hacer un seguimiento de las interacciones con los clientes.  Además, puedes configurar fácilmente disparadores que te ayudaran a expandir las funcionalidades sin límites. 
+**[Ver documentación](https://bot-whatsapp.netlify.app/)**
+
+
 ```
 npm install
-``` 
-
-Luego debes de escanear el codigo QR puedes hacerlo escaneando en la terminal o en el navegador
-http://localhost:9000/qr
-
-Una vez escaneado y vinculada tu cuenta de Whatsapp puedes empezara  probar el BOT
-
-__Steps__
-En los archivos ` .json` donde se encuentran las palabras claves deben estar en __minuscula__ no importa si el usuario la escribe en otro 
-formato ya que el script se encarga de interpretarlas en minusculas.
-
-__Envio de MAIL__
-Debes te crear un archivo llamado `.env` el cual debe de tener las siguientes variables
-```
-MAIL_PORT=465
-MAIL_SMTP=smtp.gmail.com
-MAIL_USER=tumail@gmail.com
-MAIL_PASS=TU_CONTRASEÑA_GENERADA
-MAIL_CLIENT=email_donde_quieres_recibir@mail.com
-MAIL_FROM=tumail@gmail.com
-MAIL_SUBJECT=Cliente interesado
-MAIL_TRANSPORT=smtp
-```
-
-__Formatos de Mensaje__
-`\n` Salto de linea
-`*PALABRA*` Negrito
-`_PALABRA_` Cursiva
-
-__Instalacion en Ubuntu__
-``` 
-npm install pm2 -g
-sudo apt-get install -y libgbm-dev
-sudo apt install -y gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget
+npm start
 ```
