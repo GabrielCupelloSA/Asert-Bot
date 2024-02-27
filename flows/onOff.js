@@ -4,18 +4,23 @@ const { addKeyword } = require("@bot-whatsapp/bot");
  *
  * @returns
  */
+const { addKeyword } = require("@bot-whatsapp/bot");
+
+// Flujo para activar el estado global del bot
 const flowOn = (globalState) =>
-  addKeyword(["bananaon"],{sensitive:true})
+  addKeyword(["bananaon"], { sensitive: true }) // Agrega la palabra clave "bananaon" al flujo, con sensibilidad a mayúsculas y minúsculas
     .addAction(() => {
-      globalState.status = true
+      globalState.status = true; // Actualiza el estado global a true
     })
-    .addAnswer("BOT ON!");
+    .addAnswer("BOT ON!"); // Mensaje de confirmación
+
 
 const flowOff = (globalState) =>
-  addKeyword(["bananaoff"],{sensitive:true})
+  addKeyword(["bananaoff"], { sensitive: true }) // Agrega la palabra clave "bananaoff" al flujo, con sensibilidad a mayúsculas y minúsculas
     .addAction(() => {
-      globalState.status = false
+      globalState.status = false; // Actualiza el estado global a false
     })
-    .addAnswer("BOT OFF!");
+    .addAnswer("BOT OFF!"); // Mensaje de confirmación
+
 
 module.exports = { flowOn, flowOff };

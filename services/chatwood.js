@@ -1,64 +1,56 @@
+// Definición de la clase ChatWood
 class ChatWood {
-  token = "";
-  config = { accounts: 1 };
-  api = ``;
+  token = ""; // Inicialización del token de autenticación
+  config = { accounts: 1 }; // Configuración por defecto con una cuenta
+  api = ``; // Inicialización de la URL de la API
 
+  // Constructor de la clase ChatWood
   constructor(_token = "", _api = "", _config = {}) {
-    this.token = _token;
-    this.api = _api;
-    this.config = { ...this.config, ..._config };
+    this.token = _token; // Asigna el token proporcionado al token de autenticación
+    this.api = _api; // Asigna la URL de la API proporcionada a la URL de la API
+    this.config = { ...this.config, ..._config }; // Fusiona la configuración por defecto con la proporcionada
   }
 
+  // Método para construir el encabezado de la solicitud
   buildHeader = () => {
-    const header = new Headers();
-    header.append("api_access_token", this.token);
-    header.append("Content-Type", "application/json");
-    return header;
+    const header = new Headers(); // Crea un nuevo encabezado
+    header.append("api_access_token", this.token); // Agrega el token de acceso al encabezado
+    header.append("Content-Type", "application/json"); // Establece el tipo de contenido del encabezado
+    return header; // Devuelve el encabezado construido
   };
 
-  /**
-   *
-   * @param dataIn
-   * @returns
-   */
+  // Método para obtener los mensajes de la bandeja de entrada
   getInbox = async () => {
     const requestOptions = {
       method: "GET",
-      headers: this.buildHeader(),
+      headers: this.buildHeader(), // Utiliza el encabezado construido
     };
 
     const dataAPI = await fetch(
       `${this.api}/api/v1/accounts/${this.config.accounts}/inboxes`,
       requestOptions
     );
-    const data = await dataAPI.json();
-    return data.payload;
+    const data = await dataAPI.json(); // Convierte la respuesta en formato JSON
+    return data.payload; // Devuelve los mensajes de la bandeja de entrada
   };
 
-  /**
-   *
-   * @returns
-   */
+  // Método para buscar un contacto por número de teléfono
   searchByNumber = async (phone) => {
     const requestOptions = {
       method: "GET",
-      headers: this.buildHeader(),
+      headers: this.buildHeader(), // Utiliza el encabezado construido
     };
 
     const dataAPI = await fetch(
       `${this.api}/api/v1/accounts/${this.config.accounts}/contacts/search?include_contact_inboxes=false&page=1&sort=-last_activity_at&q=${phone}`,
       requestOptions
     );
-    const data = await dataAPI.json();
-    console.log(data.payload)
-    return data.payload;
+    const data = await dataAPI.json(); // Convierte la respuesta en formato JSON
+    console.log(data.payload); // Imprime los datos del contacto en la consola
+    return data.payload; // Devuelve los datos del contacto
   };
 
-  /**
-   *
-   * @param dataIn
-   * @returns
-   */
+  // Método para crear una bandeja de entrada
   createInbox = async (dataIn) => {
     const payload = {
       name: "BOTWS",
@@ -71,23 +63,19 @@ class ChatWood {
 
     const requestOptions = {
       method: "POST",
-      headers: this.buildHeader(),
-      body: raw,
+      headers: this.buildHeader(), // Utiliza el encabezado construido
+      body: raw, // Establece el cuerpo de la solicitud
     };
 
     const dataAPI = await fetch(
       `${this.api}/api/v1/accounts/${this.config.accounts}/inboxes`,
       requestOptions
     );
-    const data = await dataAPI.json();
-    return data;
+    const data = await dataAPI.json(); // Convierte la respuesta en formato JSON
+    return data; // Devuelve la respuesta
   };
 
-  /**
-   *
-   * @param dataIn
-   * @returns
-   */
+  // Método para crear un contacto
   createContact = async (dataIn) => {
     const payload = {
       phone_number: dataIn.phone_number,
@@ -97,34 +85,31 @@ class ChatWood {
 
     const requestOptions = {
       method: "POST",
-      headers: this.buildHeader(),
-      body: raw,
+      headers: this.buildHeader(), // Utiliza el encabezado construido
+      body: raw, // Establece el cuerpo de la solicitud
     };
 
     const dataAPI = await fetch(
       `${this.api}/api/v1/accounts/${this.config.accounts}/contacts`,
       requestOptions
     );
-    const data = await dataAPI.json();
-    return data;
+    const data = await dataAPI.json(); // Convierte la respuesta en formato JSON
+    return data; // Devuelve la respuesta
   };
 
-  /**
-   *
-   * @returns
-   */
+  // Método para obtener las conversaciones
   getConversations = async () => {
     const requestOptions = {
       method: "GET",
-      headers: this.buildHeader(),
+      headers: this.buildHeader(), // Utiliza el encabezado construido
     };
 
     const dataAPI = await fetch(
       `${this.api}/api/v1/accounts/${this.config.accounts}/inboxes`,
       requestOptions
     );
-    const data = await dataAPI.json();
-    return data.payload;
+    const data = await dataAPI.json(); // Convierte la respuesta en formato JSON
+    return data.payload; // Devuelve las conversaciones
   };
   /**
    *

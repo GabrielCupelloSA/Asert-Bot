@@ -1,24 +1,32 @@
-const ffmpegPath = require("@ffmpeg-installer/ffmpeg").path;
-const ffmpeg = require("fluent-ffmpeg");
+// Importar la ruta de FFmpeg
+const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
+
+// Importar FFmpeg  
+const ffmpeg = require('fluent-ffmpeg');
+
+// Establecer la ruta de FFmpeg
 ffmpeg.setFfmpegPath(ffmpegPath);
 
-/**
- *
- * @param {*} inputStream
- * @param {*} outStream
- * @returns
- */
-const convertOggMp3 = async (inputStream, outStream) => {
+// Función para convertir OGG a MP3
+const convertirOggAMp3 = async (inputStream, outStream) => {
+
+  // Retornar una promesa para manejar la conversión
   return new Promise((resolve, reject) => {
-    ffmpeg(inputStream)
-      .audioQuality(96)
-      .toFormat("mp3")
-      .save(outStream)
-      .on("progress", (p) => null)
-      .on("end", () => {
-        resolve(true);
+
+    // Usar FFmpeg para convertir
+    ffmpeg(inputStream)  
+      .calidadDeAudio(96)
+      .aFormato('mp3')
+      .guardar(outStream)
+
+      // Manejar el progreso y la finalización
+      .on('progreso', () => {})
+      .on('fin', () => {
+        resolve(true);  
       });
+
   });
+
 };
 
-module.exports = { convertOggMp3 };
+module.exports = { convertirOggAMp3 };
